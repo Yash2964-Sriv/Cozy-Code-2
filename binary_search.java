@@ -6,6 +6,7 @@ public class binary_search {
 
     // Problem: Find index of target in sorted array, or -1 if not present.
     // Example: nums = [1,3,5,7], target = 5 -> 2
+    // Very imp 
 
     /**
      * Classic binary search on sorted array.
