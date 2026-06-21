@@ -45,23 +45,25 @@ class LinkedList{
 
     }
 
-    void deleteAtTail(){
+    void delete(int ix){
+
         if(tail==null) {
             System.out.println("The Linked List is Empty there is nothing to delete");
             return;
         }
-        if(head.next==null) { // case when there is only a single node
-            head = tail = null;
-            size--;
+        if(ix<0 || ix>size) {
+            System.out.println("Invalid index there is no element at this index");
+            return;
         }
+        if(ix==0) deleteAtHead();
         else{
             Node temp = head;
-            while (temp.next.next != null) { // The node previous to tail as tail.next=null
-                temp = temp.next; // increments the temp
+            for(int i=1; i<=ix-1; i++){
+                temp=temp.next;
             }
-            temp.next=null;
-            tail=temp;
-            size--;  
+            temp.next = temp.next.next; 
+            if(ix==size-1) tail=temp;
+            size --;
    
         }
 
@@ -76,6 +78,22 @@ class LinkedList{
         }
         System.out.println();
     }
+    public void insert(int val, int ix) {
+        if(ix < 0 || ix > size) return;
+        if(ix==0) addAtHead(val);
+        else if(ix==size) addAtTail(val);
+        else{ 
+            Node temp = head;
+            for(int i=1; i<=ix-1;i++){
+                temp=temp.next;
+            }
+            Node newVal =new Node(val);
+            newVal.next=temp.next;
+            temp.next=newVal;
+            size++;
+        }
+ 
+    }
 
 }
 
@@ -83,16 +101,20 @@ public class LinkedListDataStructure {
     public static void main(String[] args) {
         LinkedList ll =new LinkedList();
         ll.displayLinkedList();
-        ll.addAtHead(65);
+        ll.addAtHead(65); ll.displayLinkedList();
         ll.addAtTail(343);
         ll.addAtHead(5);
         ll.addAtTail(54);
         ll.addAtTail(67);
         ll.displayLinkedList();
-        ll.deleteAtTail();
         ll.deleteAtHead();
         ll.deleteAtHead();
         ll.displayLinkedList();
+        ll.insert(40,1);
+        ll.displayLinkedList();
+        ll.delete(3);
+        ll.displayLinkedList();
+    
 
       
     }
