@@ -79,7 +79,7 @@ python train_modified.py [options]
 ```powershell
 cd "IBM Project/STAEformer"
 python run_ablation.py [options]
-```
+```pip
 
 ### Activating Python Environment
 ```powershell
