@@ -2,7 +2,7 @@
  * Basic DSA Problems - Binary Watch (LeetCode 401)
  * turnedOn LEDs: return all valid times "H:MM" (H 0-11, M 0-59)
  */
-public class basic_dsa_four_hundred_one {
+public class BinaryWatch {
 
     // Problem: turnedOn = total lit LEDs. Return list of valid "h:mm" times.
 
