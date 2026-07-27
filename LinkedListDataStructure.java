@@ -114,8 +114,6 @@ public class LinkedListDataStructure {
         ll.displayLinkedList();
         ll.delete(3);
         ll.displayLinkedList();
-    
-
-      
+         
     }
 }
