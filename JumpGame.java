@@ -15,7 +15,7 @@ public class JumpGame {
      */
     public static Boolean canJump(int[] nums) {
         if (nums == null) {
-            return null;
+            return false;
         }
 
         int reach = 0;
